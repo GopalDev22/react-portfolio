@@ -1,20 +1,7 @@
 import { HERO_CONTENT } from "../constants";
 import profilePic from "../assets/profilePic.jpg";
 import { motion } from "motion/react";
-const container = (duration: number, direction: number) => ({
-  hidden: {
-    x: direction,
-    opacity: 0,
-  },
-  visible: {
-    x: 0,
-    opacity: 1,
-    transition: {
-      duration: duration,
-      delay: 0,
-    },
-  },
-});
+
 export const Hero = () => {
   return (
     <div className="border-b border-neutral-900 pb-4 lg:mb-35">
@@ -22,25 +9,25 @@ export const Hero = () => {
         <div className="w-full lg:w-1/2">
           <div className="flex flex-col items-center lg:items-start">
             <motion.h1
-              variants={container(1, -100)}
-              initial="hidden"
-              animate="visible"
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -100 }}
+              transition={{ duration: 2, delay: 0 }}
               className="text-4xl pb-16 font-thin tracking-tight lg:mt-16 lg:text-6xl "
             >
               Gaja Venu Gopal
             </motion.h1>
             <motion.span
-              variants={container(1.5, -100)}
-              initial="hidden"
-              animate="visible"
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -100 }}
+              transition={{ duration: 2, delay: 0 }}
               className="bg-gradient-to-r from-pink-300 via-slate-500 to-purple-500 bg-clip-text text-3xl tracking-tight text-transparent"
             >
               Front End Developer
             </motion.span>
             <motion.p
-              variants={container(2, -100)}
-              initial="hidden"
-              animate="visible"
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: -100 }}
+              transition={{ duration: 2, delay: 0 }}
               className="my-2 max-w-xl py-6 font-light tracking-tighter"
             >
               {HERO_CONTENT}
@@ -50,9 +37,9 @@ export const Hero = () => {
         <div className="w-full lg:w-1/2 lg:p-8">
           <div className="flex justify-center">
             <motion.img
-              variants={container(2, 100)}
-              initial="hidden"
-              animate="visible"
+              whileInView={{ opacity: 1, x: 0 }}
+              initial={{ opacity: 0, x: 100 }}
+              transition={{ duration: 2, delay: 0 }}
               className="rounded"
               src={profilePic}
               alt="venu"
