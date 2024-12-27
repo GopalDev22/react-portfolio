@@ -22,7 +22,9 @@ export const Navbar = () => {
         <a href="https://www.linkedin.com/in/venugopalgreact/" target="blank">
           <FaLinkedin className="text-blue-600" />
         </a>
-        <FaGithub />
+        <a href="https://github.com/GopalDev22/react-portfolio" target="blank">
+          <FaGithub />
+        </a>
       </div>
     </nav>
   );
